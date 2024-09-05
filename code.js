@@ -14,4 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // Add smooth scrolling for better user experience
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  football.addEventListener("click", () => {
+    football.classList.add("spin");
+    setTimeout(() => {
+      football.classList.remove("spin");
+    }, 1000);
+  });
 });

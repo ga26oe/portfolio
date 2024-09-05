@@ -102,6 +102,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .dropdown-btn {
@@ -113,6 +114,7 @@ body {
   font-size: 1rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0.5rem;
 }
 
 .dropdown-btn:hover {
@@ -124,10 +126,11 @@ body {
   display: none;
   background-color: var(--square);
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  text-align: left;
 }
 
 .dropdown-content.active {
@@ -136,11 +139,121 @@ body {
 }
 
 .dropdown-content h2 {
+  font-family: "Playfair Display", serif;
   color: var(--oColor);
   margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.dropdown-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-content h4 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .dropdown-content p {
   color: var(--textColor);
   line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.skills-list,
+.hobbies-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills-list li,
+.hobbies-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.skills-list li::before,
+.hobbies-list li::before {
+  content: "•";
+  color: var(--oColor);
+  position: absolute;
+  left: 0;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  color: var(--oColor);
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  color: var(--textColor);
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--oColor);
+}
+
+@media (max-width: 600px) {
+  .typewriterHeader h1 {
+    font-size: 1.8rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.football-container {
+  height: 2rem;
+  width: auto;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.football {
+  transition: transform 0.5s ease-in-out;
+  width: 2px;
+  height: 2px;
+}
+
+.football:hover {
+  transform: scale(1.1);
+}
+
+.football.spin {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
