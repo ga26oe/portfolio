@@ -1,0 +1,146 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --webPageColor: #1e1e1e;
+  --square: #2a2a2a;
+  --textColor: #e3e3e3;
+  --xColor: #f95959;
+  --oColor: #59f9b2;
+  --boardColor: #455d7a;
+  --hoverColor: #344861;
+  --refreshButton: #e64545;
+  --typeWriterCursor: #e64545;
+}
+/* ... (keep your existing CSS reset and root variables) ... */
+
+body {
+  background-color: var(--webPageColor);
+  color: var(--textColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Courier New", monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.typewriterHeader h1 {
+  color: var(--textColor);
+  overflow: hidden;
+  border-right: 0.15em solid var(--typeWriterCursor);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--typeWriterCursor);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.dropdown-btn {
+  background-color: var(--xColor);
+  color: var(--textColor);
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: var(--oColor);
+  transform: translateY(-3px);
+}
+
+.dropdown-content {
+  display: none;
+  background-color: var(--square);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-content.active {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown-content h2 {
+  color: var(--oColor);
+  margin-bottom: 1rem;
+}
+
+.dropdown-content p {
+  color: var(--textColor);
+  line-height: 1.6;
+}
