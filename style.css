@@ -1,4 +1,4 @@
-/* CSS reset */
+/* CSS reset and variables */
 *,
 *::before,
 *::after {
@@ -8,46 +8,14 @@
   margin: 0;
   padding: 0;
 }
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
 :root {
   --webPageColor: #1e1e1e;
   --square: #2a2a2a;
   --textColor: #e3e3e3;
-  --xColor: #f95959;
-  --oColor: #59f9b2;
-  --boardColor: #455d7a;
-  --hoverColor: #344861;
-  --refreshButton: #e64545;
+  --accentColor: #59f9b2;
+  --secondaryAccent: #f95959;
   --typeWriterCursor: #e64545;
 }
-/* ... (keep your existing CSS reset and root variables) ... */
 
 body {
   background-color: var(--webPageColor);
@@ -57,6 +25,8 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: "Courier New", monospace;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -69,23 +39,28 @@ body {
   padding: 2rem;
 }
 
-.typewriterHeader h1 {
-  color: var(--textColor);
-  overflow: hidden;
-  border-right: 0.15em solid var(--typeWriterCursor);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.15em;
-  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+/* Header styles */
+/* Header styles */
+.typewriterHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px; /* Ensure minimum height for the header */
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.typewriterHeader h1 {
+  overflow: hidden;
+  border-right: 0.15em solid var(--typeWriterCursor);
+  white-space: normal; /* Changed from nowrap to normal */
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
+  max-width: 95%; /* Increased from 90% to 95% */
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap; /* Added flex-wrap */
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes blink-caret {
@@ -98,6 +73,14 @@ body {
   }
 }
 
+/* Ensure the typewriter text doesn't overflow on smaller screens */
+@media (max-width: 768px) {
+  .typewriterHeader h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Button styles */
 .button-container {
   display: flex;
   justify-content: space-around;
@@ -106,7 +89,7 @@ body {
 }
 
 .dropdown-btn {
-  background-color: var(--xColor);
+  background-color: var(--secondaryAccent);
   color: var(--textColor);
   border: none;
   cursor: pointer;
@@ -118,10 +101,11 @@ body {
 }
 
 .dropdown-btn:hover {
-  background-color: var(--oColor);
+  background-color: var(--accentColor);
   transform: translateY(-3px);
 }
 
+/* Content styles */
 .dropdown-content {
   display: none;
   background-color: var(--square);
@@ -136,11 +120,23 @@ body {
 .dropdown-content.active {
   display: block;
   opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-content h2 {
   font-family: "Playfair Display", serif;
-  color: var(--oColor);
+  color: var(--accentColor);
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -150,110 +146,42 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.dropdown-content h4 {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
 .dropdown-content p {
   color: var(--textColor);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-.skills-list,
-.hobbies-list {
+.dropdown-content ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-.skills-list li,
-.hobbies-list li {
+.dropdown-content li {
   margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
+}
+
+#football {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
   position: relative;
 }
 
-.skills-list li::before,
-.hobbies-list li::before {
-  content: "•";
-  color: var(--oColor);
-  position: absolute;
-  left: 0;
-}
-
-.project-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.project-card h3 {
-  color: var(--oColor);
-  margin-bottom: 0.5rem;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.social-icons a {
-  color: var(--textColor);
-  margin: 0 1rem;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: var(--oColor);
-}
-
-@media (max-width: 600px) {
-  .typewriterHeader h1 {
-    font-size: 1.8rem;
-  }
-
-  .button-container {
-    flex-direction: column;
-  }
-
-  .dropdown-btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-}
-
-.football-container {
-  height: 2rem;
-  width: auto;
-  cursor: pointer;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.football {
-  transition: transform 0.5s ease-in-out;
-  width: 2px;
-  height: 2px;
-}
-
-.football:hover {
+#football:hover {
   transform: scale(1.1);
 }
 
-.football.spin {
-  animation: spin 1s linear;
-}
-
-@keyframes spin {
+@keyframes straightSpiral {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(calc(100vw - 32px)) rotate(1800deg);
   }
+}
+
+.football-spiral {
+  animation: straightSpiral 1.5s linear forwards;
 }
