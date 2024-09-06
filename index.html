@@ -3,201 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Avinash's Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="typewriterHeader">
-        <h1 id="typewriter-text">Welcome to my portfolio.</h1>
-      </div>
+    <div class="background-animation"></div>
 
-      <div class="button-container">
-        <button
-          class="dropdown-btn"
-          data-target="education"
-          data-header="My Educational Journey"
-        >
-          Education
-        </button>
-        <button
-          class="dropdown-btn"
-          data-target="projects"
-          data-header="My Projects & Experience"
-        >
-          Projects & Experience
-        </button>
-        <button
-          class="dropdown-btn"
-          data-target="skills"
-          data-header="My Technical Skills"
-        >
-          Skills
-        </button>
-        <button
-          class="dropdown-btn"
-          data-target="hobbies"
-          data-header="Things I Love to Do"
-        >
-          Hobbies
-        </button>
+    <section id="hero">
+      <div class="hero-content">
+        <h1 id="hero-typewriter"></h1>
+        <a href="#main-content" class="scroll-down">Scroll Down</a>
       </div>
+      <svg
+        class="hero-svg"
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#FF0066"
+          d="M47.7,-57.2C59.9,-47.3,67.2,-30.9,71.1,-13.1C75,4.7,75.5,23.9,67.4,38.4C59.3,52.9,42.5,62.7,24.4,68.3C6.3,73.9,-13.1,75.3,-30.4,69.3C-47.7,63.3,-62.9,49.9,-70.8,33.1C-78.7,16.3,-79.3,-3.9,-73.1,-21.2C-67,-38.5,-54,-52.8,-39.5,-61.7C-25,-70.6,-9,-74,6.1,-81.3C32.2,-88.6,35.5,-67.1,47.7,-57.2Z"
+          transform="translate(100 100)"
+        />
+      </svg>
+    </section>
 
-      <div id="education" class="section dropdown-content">
-        <h2>Education</h2>
-        <h3>2020 - 2024</h3>
-        <p>
-          Graduation from Princeton University with a bachelor's degree in
-          Mechanical and Aerospace Engineering
-        </p>
-        <div class="educationList">
-          <h4>Some relevant coursework I am proud of completing:</h4>
+    <main id="main-content">
+      <div class="container">
+        <div class="typewriterHeader">
+          <h1 id="typewriter-text"></h1>
+        </div>
+
+        <div class="button-container">
+          <aside class="sidebar">
+            <button class="dropdown-btn" data-target="education">
+              Education
+            </button>
+            <button class="dropdown-btn" data-target="projects">
+              Projects & Experience
+            </button>
+            <button class="dropdown-btn" data-target="skills">Skills</button>
+            <button class="dropdown-btn" data-target="hobbies">Hobbies</button>
+          </aside>
+        </div>
+
+        <div id="education" class="section dropdown-content">
+          <h2>Education</h2>
+          <h3>2020 - 2024</h3>
+          <p>
+            Graduation from Princeton University with a bachelor's degree in
+            Mechanical and Aerospace Engineering
+          </p>
+          <div class="educationList">
+            <h4>Some relevant coursework I am proud of completing:</h4>
+            <ul>
+              <li>Advanced Mechanical and Aerospace Engineering</li>
+              <li>Robotics and Control Systems</li>
+              <li>Computer-Aided Design and Manufacturing</li>
+              <li>Fluid Dynamics and Thermodynamics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="projects" class="section dropdown-content">
+          <h2>Projects & Work Experience</h2>
+          <div class="project">
+            <h3>Website Development for a Startup</h3>
+            <p><strong>August 2024 - Present</strong></p>
+            <p><em>KOA Admissions</em></p>
+            <ul>
+              <li>
+                Singlehandedly developing a website using ReactJS, Typescript
+                and ChakraUI for KOA Admissions, a college consulting agency
+              </li>
+            </ul>
+          </div>
+          <div class="project">
+            <h3>Motorcycle Rebuild and Blind Spot Sensor Design</h3>
+            <p><strong>September 2023 - May 2024</strong></p>
+            <p><em>Princeton University MAE Department, Princeton, NJ</em></p>
+            <ul>
+              <li>
+                Worked with professor to restore a vintage 1965 Honda CL77
+                motorcycle
+              </li>
+              <li>
+                Researched, engineered, and implemented an Arduino based blind
+                spot detection system
+              </li>
+              <li>
+                Overhauled critical safety systems by replacing the wiring
+                harness and installing a stabilizer to mitigate front tire
+                oscillation
+              </li>
+              <li>
+                Authored and published findings into a 50-page senior thesis
+                report
+              </li>
+            </ul>
+          </div>
+          <div class="project">
+            <h3>Venture Capital & Business Analytics Intern</h3>
+            <p><strong>February 2023 – April 2023</strong></p>
+            <p><em>HP Tech Ventures w/ Paragon One, Remote</em></p>
+            <ul>
+              <li>
+                Conducted comprehensive profiling of pre-seed stage startups,
+                leveraging data analytics to support evaluation process
+              </li>
+              <li>
+                Implemented SQL queries and Excel functions to perform
+                quantitative analysis on startup metrics and market trends
+              </li>
+              <li>
+                Synthesized information into concise visually appealing
+                presentations
+              </li>
+              <li>
+                Presented attractive startups to board partners using concise
+                and presentable data
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="skills" class="section dropdown-content">
+          <h2>Technical Skills</h2>
           <ul>
-            <li>Advanced Mechanical and Aerospace Engineering</li>
-            <li>Robotics and Control Systems</li>
-            <li>Computer-Aided Design and Manufacturing</li>
-            <li>Fluid Dynamics and Thermodynamics</li>
+            <li>HTML, CSS, and JavaScript</li>
+            <li>React, NextJS, ChakraUI, Python (Pandas, NumPy)</li>
+            <li>CREO, Fusion360, MATLAB and Simulink, AutoCAD</li>
+            <li>Microsoft Excel for Data Analysis</li>
           </ul>
         </div>
-      </div>
 
-      <div id="projects" class="section dropdown-content">
-        <h2>Projects & Work Experience</h2>
-        <div class="project1">
-          <h3>Website Development for a Startup</h3>
-          <p><strong>August 2024 - Present</strong></p>
-          <p><em>KOA Admissions</em></p>
+        <div id="hobbies" class="section dropdown-content">
+          <h2>My Hobbies</h2>
           <ul>
+            <li>I love playing catch and I can throw a pretty tight spiral</li>
             <li>
-              Singlehandedly developing a website using ReactJS, Typescript and
-              ChakraUI for KOA Admissions, a college consulting agency
+              I enjoy being bad at running and being mediocre at other sports
             </li>
+            <li>I love afrobeats. Check out my playlist below</li>
+            <li>I spend an absurd amount of time doing WPM typing tests.</li>
           </ul>
         </div>
-        <div class="project1">
-          <h3>Motorcycle Rebuild and Blind Spot Sensor Design</h3>
-          <p><strong>September 2023 - May 2024</strong></p>
-          <p><em>Princeton University MAE Department, Princeton, NJ</em></p>
-          <ul>
-            <li>
-              Worked with professor to restore a vintage 1965 Honda CL77
-              motorcycle
-            </li>
-            <li>
-              Researched, engineered, and implemented an Arduino based blind
-              spot detection system
-            </li>
-            <li>
-              Overhauled critical safety systems by replacing the wiring harness
-              and installing a stabilizer to mitigate front tire oscillation
-            </li>
-            <li>
-              Authored and published findings into a 50-page senior thesis
-              report
-            </li>
-          </ul>
-        </div>
-        <div class="project2">
-          <h3>Venture Capital & Business Analytics Intern</h3>
-          <p><strong>February 2023 – April 2023</strong></p>
-          <p><em>HP Tech Ventures w/ Paragon One, Remote</em></p>
-          <ul>
-            <li>
-              Conducted comprehensive profiling of pre-seed stage startups,
-              leveraging data analytics to support evaluation process
-            </li>
-            <li>
-              Implemented SQL queries and Excel functions to perform
-              quantitative analysis on startup metrics and market trends
-            </li>
-            <li>
-              Synthesized information into concise visually appealing
-              presentations
-            </li>
-            <li>
-              Presented attractive startups to board partners using concise and
-              presentable data
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <div id="skills" class="section dropdown-content">
-        <h2>Technical Skills</h2>
-        <ul>
-          <li>HTML, CSS, and JavaScript</li>
-          <li>React, NextJS, ChakraUI, Python (Pandas, NumPy)</li>
-          <li>CREO, Fusion360, MATLAB and Simulink, AutoCAD</li>
-          <li>Microsoft Excel for Data Analysis</li>
-        </ul>
-      </div>
-
-      <div id="hobbies" class="section dropdown-content">
-        <h2>My Hobbies</h2>
-        <ul>
-          <li>
-            I love playing catch and I can throw a pretty tight spiral
-            <div id="football-container">
-              <img src="images/football.svg" alt="Football" id="football" />
-            </div>
-          </li>
-          <li>
-            I enjoy being bad at running and being mediocre at other sports
-          </li>
-          <li>I love afrobeats. Check out my playlist below</li>
-          <li>I spend an absurd amount of time doing WPM typing tests.</li>
-        </ul>
-      </div>
-
-      <div class="social-icons">
-        <a
-          href="https://www.linkedin.com/in/yourprofile"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-linkedin"
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <path
-              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-            ></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <a
-          href="https://open.spotify.com/user/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-music"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a
+            href="https://open.spotify.com/user/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <path d="M9 18V5l12-2v13"></path>
-            <circle cx="6" cy="18" r="3"></circle>
-            <circle cx="18" cy="16" r="3"></circle>
-          </svg>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-music"
+            >
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
+    </main>
+
     <script src="code.js"></script>
   </body>
 </html>
