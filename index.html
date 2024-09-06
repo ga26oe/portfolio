@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avinash's Portfolio</title>
+    <title>My Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -13,9 +13,10 @@
   <body>
     <div class="background-animation"></div>
 
-    <section id="hero">
+    <section id="hero" class="section">
       <div class="hero-content">
         <h1 id="hero-typewriter"></h1>
+        <span id="hero-caret" class="caret">|</span>
         <a href="#main-content" class="scroll-down">Scroll Down</a>
       </div>
       <svg
@@ -27,30 +28,27 @@
           fill="#FF0066"
           d="M47.7,-57.2C59.9,-47.3,67.2,-30.9,71.1,-13.1C75,4.7,75.5,23.9,67.4,38.4C59.3,52.9,42.5,62.7,24.4,68.3C6.3,73.9,-13.1,75.3,-30.4,69.3C-47.7,63.3,-62.9,49.9,-70.8,33.1C-78.7,16.3,-79.3,-3.9,-73.1,-21.2C-67,-38.5,-54,-52.8,-39.5,-61.7C-25,-70.6,-9,-74,6.1,-81.3C32.2,-88.6,35.5,-67.1,47.7,-57.2Z"
           transform="translate(100 100)"
-        />
+        ></path>
       </svg>
     </section>
 
-    <main id="main-content">
+    <main id="main-content" role="main">
+      <button id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+      <nav id="sidebar">
+        <button class="dropdown-btn" data-target="education">Education</button>
+        <button class="dropdown-btn" data-target="projects">
+          Projects & Experience
+        </button>
+        <button class="dropdown-btn" data-target="skills">Skills</button>
+        <button class="dropdown-btn" data-target="hobbies">Hobbies</button>
+      </nav>
+
       <div class="container">
         <div class="typewriterHeader">
           <h1 id="typewriter-text"></h1>
         </div>
 
-        <div class="button-container">
-          <aside class="sidebar">
-            <button class="dropdown-btn" data-target="education">
-              Education
-            </button>
-            <button class="dropdown-btn" data-target="projects">
-              Projects & Experience
-            </button>
-            <button class="dropdown-btn" data-target="skills">Skills</button>
-            <button class="dropdown-btn" data-target="hobbies">Hobbies</button>
-          </aside>
-        </div>
-
-        <div id="education" class="section dropdown-content">
+        <section id="education" class="section dropdown-content">
           <h2>Education</h2>
           <h3>2020 - 2024</h3>
           <p>
@@ -66,9 +64,9 @@
               <li>Fluid Dynamics and Thermodynamics</li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div id="projects" class="section dropdown-content">
+        <section id="projects" class="section dropdown-content">
           <h2>Projects & Work Experience</h2>
           <div class="project">
             <h3>Website Development for a Startup</h3>
@@ -128,9 +126,9 @@
               </li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div id="skills" class="section dropdown-content">
+        <section id="skills" class="section dropdown-content">
           <h2>Technical Skills</h2>
           <ul>
             <li>HTML, CSS, and JavaScript</li>
@@ -138,9 +136,9 @@
             <li>CREO, Fusion360, MATLAB and Simulink, AutoCAD</li>
             <li>Microsoft Excel for Data Analysis</li>
           </ul>
-        </div>
+        </section>
 
-        <div id="hobbies" class="section dropdown-content">
+        <section id="hobbies" class="section dropdown-content">
           <h2>My Hobbies</h2>
           <ul>
             <li>I love playing catch and I can throw a pretty tight spiral</li>
@@ -150,9 +148,9 @@
             <li>I love afrobeats. Check out my playlist below</li>
             <li>I spend an absurd amount of time doing WPM typing tests.</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="social-icons">
+<!--         <div class="social-icons">
           <a
             href="https://www.linkedin.com/in/yourprofile"
             target="_blank"
@@ -200,7 +198,7 @@
             </svg>
           </a>
         </div>
-      </div>
+      </div> -->
     </main>
 
     <script src="code.js"></script>
