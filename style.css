@@ -74,20 +74,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.scroll-down {
-  color: var(--textColor);
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 2px solid var(--accentColor);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-.scroll-down:hover {
-  background-color: var(--accentColor);
-  color: var(--webPageColor);
-}
-
 .hero-svg {
   position: absolute;
   width: 100%;
@@ -136,6 +122,40 @@ body {
 }
 
 @keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--typeWriterCursor);
+  }
+}
+
+.hero-typewriter {
+  display: inline-block;
+  position: relative;
+}
+
+.hero-typewriter h1 {
+  overflow: hidden;
+  border-right: 0.15em solid var(--typeWriterCursor);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: hero-typing 3.5s steps(40, end),
+    hero-blink-caret 0.75s step-end infinite;
+}
+
+@keyframes hero-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes hero-blink-caret {
   from,
   to {
     border-color: transparent;
@@ -247,8 +267,12 @@ body {
   transition: margin-left 0.3s ease;
 }
 
-#main-content.sidebar-open .container {
-  margin-left: 220px; /* 200px sidebar width + 20px extra space */
+#main-content {
+  transition: margin-left 0.3s ease;
+}
+
+#main-content.sidebar-open {
+  margin-left: 200px;
 }
 
 /* Typography */
@@ -286,3 +310,43 @@ ul {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--accentColor);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.scroll-down:hover {
+  background-color: var(--accentColor);
+}
+
+.scroll-down:hover .arrow-down {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+/* 
+.arrow-down {
+  width: 100px;
+  height: 100px;
+}
+ */

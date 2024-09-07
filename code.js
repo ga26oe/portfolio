@@ -1,3 +1,5 @@
+"use client";
+
 let typewriterTimeout;
 let isTyping = false;
 let currentPhrase = "";
@@ -34,19 +36,13 @@ const typewriterContent = {
     "Huge Gym Bro. What's your bench? Oh, and I never skip Leg Day",
   ],
 };
-
 function startTypewriter(category) {
-  // Stop any existing animation
   stopTypewriter();
-
-  // Reset variables
   charIndex = 0;
   phraseIndex = 0;
   currentCategory = category;
   currentPhrase = typewriterContent[currentCategory][phraseIndex];
   typewriterText.textContent = "";
-
-  // Start the animation
   isTyping = true;
   typeWriter();
 }
@@ -88,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   typewriterText = document.getElementById("typewriter-text");
   const buttons = document.querySelectorAll(".dropdown-btn");
   const contents = document.querySelectorAll(".dropdown-content");
-  const sidebarToggle = document.getElementById("sidebar-toggle");
   const sidebar = document.getElementById("sidebar");
   const mainContent = document.getElementById("main-content");
 
@@ -125,18 +120,42 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       startTypewriter(target);
+
+      // Scroll to the target section
+      const section = document.getElementById(target);
+      section.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("show");
-    mainContent.classList.toggle("sidebar-open");
+  // Sidebar functionality
+  document.addEventListener("mousemove", (event) => {
+    if (event.clientX < 20) {
+      sidebar.classList.add("show");
+      mainContent.classList.add("sidebar-open");
+    }
   });
 
-  document.addEventListener("click", (event) => {
-    if (!sidebar.contains(event.target) && event.target !== sidebarToggle) {
+  sidebar.addEventListener("mouseleave", () => {
+    sidebar.classList.remove("show");
+    mainContent.classList.remove("sidebar-open");
+  });
+
+  // Display sidebar when scrolling down
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      sidebar.classList.add("show");
+      mainContent.classList.add("sidebar-open");
+    } else {
       sidebar.classList.remove("show");
       mainContent.classList.remove("sidebar-open");
     }
+  });
+
+  // Animated scroll-down arrow
+  const scrollDownArrow = document.querySelector(".scroll-down");
+  scrollDownArrow.addEventListener("click", (e) => {
+    e.preventDefault();
+    const mainContent = document.getElementById("main-content");
+    mainContent.scrollIntoView({ behavior: "smooth" });
   });
 });
