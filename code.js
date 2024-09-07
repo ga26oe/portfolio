@@ -80,7 +80,6 @@ function typeWriter() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const heroTypewriter = document.getElementById("hero-typewriter");
-  const heroCaret = document.getElementById("hero-caret");
   typewriterText = document.getElementById("typewriter-text");
   const buttons = document.querySelectorAll(".dropdown-btn");
   const contents = document.querySelectorAll(".dropdown-content");
@@ -95,10 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (heroIndex < heroPhrase.length) {
       heroTypewriter.textContent += heroPhrase.charAt(heroIndex);
       heroIndex++;
-      heroCaret.style.left = heroTypewriter.offsetWidth + "px";
       setTimeout(typeHero, 100);
-    } else {
-      heroCaret.style.display = "none";
     }
   }
 
